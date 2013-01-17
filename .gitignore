@@ -1,0 +1,16 @@
+# ignore class files
+*.class
+
+# ignore target's specific to the project Amgine-exchange
+
+Certification-task/microblog-dao/target
+Certification-task/microblog-domain/target
+Certification-task/microblog-engine/target
+Certification-task/microblog-generator/target
+Certification-task/microblog-service/target
+Certification-task/microblog-webapp/target
+
+# ignore IDEA project files
+.idea
+*.iml
+

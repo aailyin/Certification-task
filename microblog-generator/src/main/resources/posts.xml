@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JAXBPosts>
+    <posts>
+        <message>
+            <post>111111111</post>
+            <namePoster>ivanov</namePoster>
+        </message>
+        <message>
+            <post>2222222222</post>
+            <namePoster>kozlov</namePoster>
+        </message>
+        <message>
+            <post>333333333</post>
+            <namePoster>sidorov</namePoster>
+        </message>
+    </posts>
+</JAXBPosts>
