@@ -1,3 +1,4 @@
+<!--
 <assembly>
     <id>assemble-pu</id>
     <formats>
@@ -34,4 +35,4 @@
             </includes>
         </dependencySet>
     </dependencySets>
-</assembly>
+</assembly>-->

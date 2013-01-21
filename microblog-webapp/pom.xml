@@ -4,23 +4,31 @@
     <groupId>certification-task.microblog</groupId>
     <artifactId>microblog-webapp</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>webapp</name>
-    <packaging>pom</packaging>
     <parent>
         <groupId>certification-task</groupId>
         <artifactId>microblog</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <build>
-        <finalName>microblog-webapp</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
+    <dependencies>
+        <dependency>
+            <groupId>certification-task.microblog</groupId>
+            <artifactId>microblog-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-        </plugins>
-    </build>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+
+    </dependencies>
 
 </project>

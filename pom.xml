@@ -9,11 +9,22 @@
     <repositories>
         <repository>
             <id>java.net.m2</id>
-            <url>http://download.java.net/maven/2/</url>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+        <repository>
+            <id>people.apache.snapshots</id>
+            <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
         <repository>
             <id>org.openspaces</id>
             <url>http://maven-repository.openspaces.org</url>
+        </repository>
+        <repository>
+            <id>provided_lib</id>
+            <url>file://${project.basedir}/provided_libs</url>
         </repository>
     </repositories>
 
@@ -38,12 +49,6 @@
     <dependencyManagement>
         <dependencies>
             <!--For Apache CXF-->
-            <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-api</artifactId>
-                <version>${cxf.version}</version>
-                <scope>compile</scope>
-            </dependency>
 
             <dependency>
                 <groupId>org.apache.cxf</groupId>
@@ -58,13 +63,6 @@
                 <version>${cxf.version}</version>
                 <scope>compile</scope>
             </dependency>
-
-            <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-rt-transports-http-jetty</artifactId>
-                <version>${cxf.version}</version>
-            </dependency>
-
 
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -101,10 +99,11 @@
                 <artifactId>jsr250-api</artifactId>
                 <version>1.0</version>
             </dependency>
+
             <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-bundle-jaxrs</artifactId>
-                <version>2.2.4</version>
+                <groupId>aopalliance</groupId>
+                <artifactId>aopalliance</artifactId>
+                <version>1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -194,6 +193,12 @@
                         <version>${springVersion}</version>
                         <scope>provided</scope>
                     </dependency>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                        <version>${springVersion}</version>
+                        <scope>provided</scope>
+                    </dependency>
                 </dependencies>
             </dependencyManagement>
             <activation>
@@ -202,11 +207,6 @@
         </profile>
     </profiles>
     <dependencies>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-api</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -219,13 +219,6 @@
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${cxf.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -243,7 +236,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.gigaspaces</groupId>
@@ -255,6 +247,7 @@
             <artifactId>gs-openspaces</artifactId>
             <version>${gsVersion}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
@@ -276,6 +269,11 @@
             <version>${springVersion}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.1</version>
@@ -283,6 +281,7 @@
         </dependency>
 
     </dependencies>
+
     <build>
         <defaultGoal>package</defaultGoal>
         <testResources>
@@ -294,11 +293,11 @@
             </testResource>
         </testResources>
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

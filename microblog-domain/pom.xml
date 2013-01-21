@@ -11,10 +11,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <build>
+<!--    <build>
         <finalName>microblog-domain</finalName>
 
-        <plugins>
+        &lt;!&ndash;<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -25,7 +25,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
             </plugin>
 
-        </plugins>
+        </plugins>&ndash;&gt;
 
-    </build>
+    </build>-->
+
+
 </project>
