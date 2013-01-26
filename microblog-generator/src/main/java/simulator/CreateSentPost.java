@@ -14,7 +14,7 @@ public class CreateSentPost {
 
     public static void createSentPost(JAXBPostModel jaxbPostModel) throws JAXBException, FileNotFoundException {
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext(new String[]{"client-beans.xml"});
+                new ClassPathXmlApplicationContext(new String[]{"/beans.xml"});
 
         SearchSentPostService client = (SearchSentPostService) context.getBean("clientSentPost");
 

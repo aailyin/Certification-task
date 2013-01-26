@@ -13,6 +13,6 @@
     <jaxws:endpoint
             id="searchSentPostService"
             implementor="implementation.SearchSentPostServiceImpl"
-            address="/SearchSentPost" />
+            address="/searchSentPost" />
 
 </beans>

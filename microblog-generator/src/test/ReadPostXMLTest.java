@@ -5,10 +5,13 @@ import junit.textui.TestRunner;
 import post.JAXBPostModel;
 import simulator.ReadPost;
 
+import java.io.InputStream;
+
 */
 /**
  * @author aa.ilyin
  *//*
+
 
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(locations = "classpath:/META-INF/webapp.spring/pu.xml")
@@ -18,11 +21,12 @@ public class ReadPostXMLTest extends TestCase {
         super(testName);
     }
 
-//    @Test
     public void readPostXMLTest(){
         JAXBPostModel[] posts;
         try{
-            posts = ReadPost.readPostsXML("D:\\Projects\\Gigaspace\\Certification-task\\generator\\src\\main\\resources\\posts.xml");
+            InputStream inputStream = getClass().getResourceAsStream("/posts.xml");
+
+            posts = ReadPost.readPostsXML(inputStream);
             for (JAXBPostModel jaxbPostModel: posts){
                 System.out.println(jaxbPostModel);
             }
@@ -39,4 +43,5 @@ public class ReadPostXMLTest extends TestCase {
         testSuite.addTest(new ReadPostXMLTest("readPostXMLTest"));
         testRunner.doRun(testSuite);
     }
-}*/
+}
+*/

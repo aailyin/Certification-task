@@ -6,12 +6,12 @@
                     http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 
-<import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
     <jaxws:client id="clientSentPost"
                   serviceClass="interfaces.service.SearchSentPostService"
-                  address="http://localhost:8080/certification-task/SearchSentPost" />
+                  address="http://localhost:8080/certification-task/searchSentPost" />
 
 </beans>
